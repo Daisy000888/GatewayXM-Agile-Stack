@@ -171,9 +171,26 @@ services:
     restart: always
     ports:
       - 8090:8090/tcp
+      
+  agile-kura:
+    image: agileiot/agile-kura-armv7l:travis
+    hostname: agile-kura
+    restart: always
+    privileged: true
+    ports:
+      - 1234:1234/tcp
+      - 5002:5002/tcp
+      - 1883:1883/tcp
+
+  node-ota:
+    build: ./node-ota
+    restart: no
+    volumes:
+      - kura-conf:/opt/eclipse
 
 volumes:
   agile-data-core-plugins:
   agile-data-nodered:
   agile-data-security-idm-conf:
   agile-dbus-dir:
+  kura-conf:

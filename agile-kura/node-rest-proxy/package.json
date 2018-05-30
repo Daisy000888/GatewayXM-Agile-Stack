@@ -1,0 +1,17 @@
+{
+  "name": "node-rest-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rest-proxy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "EPL-2.0",
+  "dependencies": {
+    "eventemitter3": "^1.2.0",
+    "http-proxy": "^1.16.2",
+    "npm": "^5.7.1",
+    "requires-port": "^1.0.0"
+  }
+}
