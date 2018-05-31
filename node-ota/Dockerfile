@@ -1,7 +1,7 @@
+FROM resin/raspberry-pi-alpine-python:3.6-slim
+
 ENV FW_FILE = "firmware_v2.bin"
 ENV FW_ID = "0x01"
-
-FROM resin/raspberry-pi-alpine-python:3.6-slim
 
 ADD send_ota.py /
 ADD firmware.bin /
