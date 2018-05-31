@@ -4,7 +4,7 @@ ENV FW_FILE = "firmware_v2.bin"
 ENV FW_ID = "0x01"
 
 ADD send_ota.py /
-ADD firmware.bin /
+ADD FW_FILE /
 
 RUN pip install paho-mqtt
 
