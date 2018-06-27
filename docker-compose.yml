@@ -94,15 +94,15 @@ services:
       io.resin.features.dbus: '1'
     command: bash -c "mkdir -p /var/run/dbus && rm -f /var/run/dbus/pid && dbus-daemon --system && hciconfig hci0 down && hciconfig hci0 up && /usr/local/libexec/bluetooth/bluetoothd -E & scripts/start.sh BLE"
 
-  agile-dummy:
-    image: agileiot/agile-dummy-armv7l:v0.3.1
-    depends_on:
-      - agile-dbus
-    volumes:
-      - agile-dbus-dir:/usr/src/app/.agile_bus
-    environment:
-      DBUS_SESSION_BUS_ADDRESS: "unix:path=/usr/src/app/.agile_bus/agile_bus_socket"
-    restart: always
+  # agile-dummy:
+  #   image: agileiot/agile-dummy-armv7l:v0.3.1
+  #   depends_on:
+  #     - agile-dbus
+  #   volumes:
+  #     - agile-dbus-dir:/usr/src/app/.agile_bus
+  #   environment:
+  #     DBUS_SESSION_BUS_ADDRESS: "unix:path=/usr/src/app/.agile_bus/agile_bus_socket"
+  #   restart: always
 
   agile-ui:
     image: agileiot/agile-ui-armv7l:v2.5.1
